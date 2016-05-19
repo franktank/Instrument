@@ -1,6 +1,7 @@
 var React = require('react');
 var OrganKey = require('./organ_key');
 var Recorder = require('./recorder');
+
 var Organ = React.createClass({
   render: function() {
     return (

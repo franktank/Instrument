@@ -8,6 +8,6 @@ var Organ = require("./components/organ");
 
 document.addEventListener('DOMContentLoaded', function() {
   ReactDOM.render(
-    <Organ/>, document.getElementById("content")
+    <Organ />, document.getElementById("content")
   );
 });

@@ -1,12 +1,14 @@
 var React = require("react"),
-    KeyActions = require("../actions/key_actions"),
-    KeyStore = require("../stores/key_store");
+    KeyActions = require('../actions/key_actions'),
+    KeyStore = require('../stores/key_store');
 
-var Note = require("../util/note.js");
-var Tones = require("../constants/tones.js");
+var Note = require('../util/note.js');
+var Tones = require('../constants/tones.js');
 
 var OrganKey = React.createClass({
-  __onChange: function() {
+
+  _onChange: function() {
+    //noteName passed from organ.js
     if (KeyStore.keys().indexOf(this.props.noteName) > -1) {
       this.note.start(1);
       this.secondHarm.start(0.5);
@@ -30,7 +32,7 @@ var OrganKey = React.createClass({
     this.thirdHarm = new Note(3*freq);
     this.fourthHarm = new Note(4*freq);
     this.fifthHarm = new Note(5*freq);
-    this.listener = KeyStore.addListener(this.__onChange);
+    this.listener = KeyStore.addListener(this._onChange);
   },
 
   componentWillUnmount: function() {
